@@ -73,6 +73,7 @@ class CardFrontLayout {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: Container(
+                height: cardHeight! * 0.5,
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -98,7 +99,7 @@ class CardFrontLayout {
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: <Widget>[
                                 Text(
                                   textExpDate!,
