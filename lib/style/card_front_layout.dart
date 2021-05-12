@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class CardFrontLayout {
@@ -76,68 +77,68 @@ class CardFrontLayout {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            cardNumber == null || cardNumber!.isEmpty
-                                ? 'XXXX XXXX XXXX XXXX'
-                                : cardNumber!,
-                            style: TextStyle(
-                                package: 'awesome_card',
-                                color: textColor,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'MavenPro',
-                                fontSize: 22),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                textExpDate!,
-                                style: TextStyle(
-                                    package: 'awesome_card',
-                                    color: textColor,
-                                    fontFamily: 'MavenPro',
-                                    fontSize: 15),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                cardExpiry == null || cardExpiry!.isEmpty
-                                    ? textExpiry!
-                                    : cardExpiry!,
-                                style: TextStyle(
-                                    package: 'awesome_card',
-                                    color: textColor,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'MavenPro',
-                                    fontSize: 16),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            cardHolderName == null || cardHolderName!.isEmpty
-                                ? textName!
-                                : cardHolderName!,
-                            style: TextStyle(
-                                package: 'awesome_card',
-                                color: textColor,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'MavenPro',
-                                fontSize: 17),
-                          ),
-                        ],
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            AutoSizeText(
+                              cardNumber == null || cardNumber!.isEmpty
+                                  ? 'XXXX XXXX XXXX XXXX'
+                                  : cardNumber!,
+                              maxFontSize: 22,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  package: 'awesome_card',
+                                  color: textColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'MavenPro',
+                                  fontSize: 22),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  textExpDate!,
+                                  style: TextStyle(
+                                      package: 'awesome_card',
+                                      color: textColor,
+                                      fontFamily: 'MavenPro',
+                                      fontSize: 15),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  cardExpiry == null || cardExpiry!.isEmpty
+                                      ? textExpiry!
+                                      : cardExpiry!,
+                                  style: TextStyle(
+                                      package: 'awesome_card',
+                                      color: textColor,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'MavenPro',
+                                      fontSize: 16),
+                                ),
+                              ],
+                            ),
+                            AutoSizeText(
+                              cardHolderName == null || cardHolderName!.isEmpty
+                                  ? textName!
+                                  : cardHolderName!,
+                              maxFontSize: 17,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  package: 'awesome_card',
+                                  color: textColor,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'MavenPro',
+                                  fontSize: 17),
+                            ),
+                          ],
+                        ),
                       ),
                       cardTypeIcon!
                     ]),
